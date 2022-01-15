@@ -1,0 +1,58 @@
+.header {
+  background: #090b13;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0px 36px;
+  overflow-x: hidden;
+}
+.header .navMenu {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+.header .navMenu button {
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0px 12px;
+  cursor: pointer;
+}
+.header .navMenu button img {
+  height: 18px;
+}
+.header .navMenu button span {
+  font-size: 13px;
+  letter-spacing: 1.42px;
+  margin-left: 2px;
+  position: relative;
+}
+.header .navMenu button span::after {
+  content: "";
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.35s ease;
+}
+.header .navMenu button span:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.header .logoImg {
+  width: 70px;
+  height: 40px;
+}
+.header .userImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}/*# sourceMappingURL=header.module.css.map */

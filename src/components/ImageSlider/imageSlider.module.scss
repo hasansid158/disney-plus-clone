@@ -1,0 +1,55 @@
+.imageSlider {
+  margin-top: 20px;
+  overflow: visible;
+
+  button {
+    z-index: 1;
+  }
+
+  .sliderCont {
+    border: 4px solid transparent;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+      border-radius: 4px;
+      transition: border 0.25s ease;
+      border: 4px solid transparent;
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      border: 4px solid rgba(249, 249, 249, 0.6);
+    }
+  }
+
+  ul li button {
+    &::before {
+      font-size: 10px;
+      color: rgb(150, 158, 171);
+    }
+  }
+}
+
+:global {
+  .slick-list {
+    overflow: visible !important;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: white !important;
+  }
+}

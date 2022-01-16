@@ -1,0 +1,20 @@
+.movieSliders {
+  margin-bottom: 30px;
+
+  button ~ div div div {
+    transition: all 500ms ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  & > div {
+    margin-top: 12px;
+    margin-left: -10px;
+  }
+}

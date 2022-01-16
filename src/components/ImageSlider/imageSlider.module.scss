@@ -7,7 +7,9 @@
   }
 
   .sliderCont {
-    border: 4px solid transparent;
+    // border: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
     position: relative;
 
     img {
@@ -32,7 +34,7 @@
     }
 
     &:hover::after {
-      border: 4px solid rgba(249, 249, 249, 0.6);
+      border: 4px solid rgba(249, 249, 249, 0.8);
     }
   }
 
@@ -40,6 +42,7 @@
     &::before {
       font-size: 10px;
       color: rgb(150, 158, 171);
+      opacity: 1;
     }
   }
 }
@@ -50,6 +53,24 @@
   }
 
   .slick-dots li.slick-active button:before {
+    opacity: 1 !important;
     color: white !important;
+  }
+
+  .slick-dots {
+    right: 20px !important;
+    bottom: 15px !important;
+    text-align: right !important;
+    display: block !important;
+
+    li button {
+      cursor: default !important;
+    }
+  }
+
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    opacity: 0 !important;
+    cursor: default !important;
   }
 }

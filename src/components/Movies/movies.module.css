@@ -1,0 +1,16 @@
+.movieSliders {
+  margin-bottom: 30px;
+}
+.movieSliders button ~ div div div {
+  transition: all 500ms ease;
+}
+.movieSliders button ~ div div div:hover {
+  transform: scale(1.02);
+}
+.movieSliders h4 {
+  font-size: 20px;
+}
+.movieSliders > div {
+  margin-top: 12px;
+  margin-left: -10px;
+}/*# sourceMappingURL=movies.module.css.map */

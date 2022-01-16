@@ -6,7 +6,8 @@
   z-index: 1;
 }
 .imageSlider .sliderCont {
-  border: 4px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
   position: relative;
 }
 .imageSlider .sliderCont img {
@@ -28,16 +29,32 @@
   cursor: pointer;
 }
 .imageSlider .sliderCont:hover::after {
-  border: 4px solid rgba(249, 249, 249, 0.6);
+  border: 4px solid rgba(249, 249, 249, 0.8);
 }
 .imageSlider ul li button::before {
   font-size: 10px;
   color: #969eab;
+  opacity: 1;
 }
 
 :global .slick-list {
   overflow: visible !important;
 }
 :global .slick-dots li.slick-active button:before {
+  opacity: 1 !important;
   color: white !important;
+}
+:global .slick-dots {
+  right: 20px !important;
+  bottom: 15px !important;
+  text-align: right !important;
+  display: block !important;
+}
+:global .slick-dots li button {
+  cursor: default !important;
+}
+:global .slick-prev.slick-disabled:before,
+:global .slick-next.slick-disabled:before {
+  opacity: 0 !important;
+  cursor: default !important;
 }/*# sourceMappingURL=imageSlider.module.css.map */

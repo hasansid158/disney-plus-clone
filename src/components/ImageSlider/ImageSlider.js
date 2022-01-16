@@ -5,30 +5,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-const settings = {
+let defaultSettings = {
   dots: true,
   infinite: true,
-  speed: 500,
+  speed: 300,
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
 };
 
-function ImageSlider() {
+function ImageSlider(props) {
+  const imageUrls = props.images && props.images.urls;
+
+  defaultSettings =
+    props.settings != undefined ? props.settings : defaultSettings;
+
   return (
-    <Slider {...settings} className={style.imageSlider}>
-      <div className={style.sliderCont}>
-        <img src="/images/slider-badag.jpg" alt="slider img 1" />
-      </div>
-      <div className={style.sliderCont}>
-        <img src="/images/slider-badging.jpg" alt="slider img 2" />
-      </div>
-      <div className={style.sliderCont}>
-        <img src="/images/slider-scale.jpg" alt="slider img 3" />
-      </div>
-      <div className={style.sliderCont}>
-        <img src="/images/slider-scales.jpg" alt="slider img 4" />
-      </div>
+    <Slider {...defaultSettings} className={style.imageSlider}>
+      {imageUrls.map((url, idx) => {
+        return (
+          <div className={style.sliderCont} key={idx}>
+            <img src={url} alt={idx} />
+          </div>
+        );
+      })}
     </Slider>
   );
 }

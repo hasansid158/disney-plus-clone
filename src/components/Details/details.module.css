@@ -86,10 +86,20 @@
   font-size: 28px;
   font-weight: normal;
   cursor: pointer;
+  transition: all 300ms ease;
 }
 .detailsContainer .controls .addButton svg,
 .detailsContainer .controls .groupWatchButton svg {
   transition: all 300ms ease 0s;
   fill: white;
   transform: scale(1.4);
+}
+.detailsContainer .controls .addButton:hover,
+.detailsContainer .controls .groupWatchButton:hover {
+  background-color: white;
+  color: #090b13;
+}
+.detailsContainer .controls .addButton:hover svg,
+.detailsContainer .controls .groupWatchButton:hover svg {
+  fill: #090b13;
 }/*# sourceMappingURL=details.module.css.map */

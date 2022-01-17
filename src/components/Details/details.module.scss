@@ -95,11 +95,21 @@
       font-size: 28px;
       font-weight: normal;
       cursor: pointer;
+      transition: all 300ms ease;
 
       svg {
         transition: all 300ms ease 0s;
         fill: white;
         transform: scale(1.4);
+      }
+
+      &:hover {
+        background-color: white;
+        color: #090b13;
+
+        svg {
+          fill: #090b13;
+        }
       }
     }
   }

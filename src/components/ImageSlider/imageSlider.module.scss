@@ -68,6 +68,18 @@
     }
   }
 
+  .slick-next,
+  .slick-prev {
+    height: 100% !important;
+    width: 5% !important;
+  }
+  .slick-next {
+    right: -3.8vw !important;
+  }
+  .slick-prev {
+    left: -3.8vw !important;
+  }
+
   .slick-prev.slick-disabled:before,
   .slick-next.slick-disabled:before {
     opacity: 0 !important;

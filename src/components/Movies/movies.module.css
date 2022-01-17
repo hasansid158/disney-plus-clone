@@ -1,16 +1,19 @@
 .movieSliders {
   margin-bottom: 30px;
 }
-.movieSliders button ~ div div div {
+.movieSliders :global .slick-slider {
+  margin-top: 12px;
+}
+.movieSliders :global .slick-slide {
   transition: all 500ms ease;
 }
-.movieSliders button ~ div div div:hover {
-  transform: scale(1.02);
+.movieSliders :global .slick-slide:hover {
+  transform: scale(1.05);
+}
+.movieSliders :global .slick-slide div div {
+  border-left: none transparent;
+  border-right: 20px solid transparent;
 }
 .movieSliders h4 {
   font-size: 20px;
-}
-.movieSliders > div {
-  margin-top: 12px;
-  margin-left: -10px;
 }/*# sourceMappingURL=movies.module.css.map */

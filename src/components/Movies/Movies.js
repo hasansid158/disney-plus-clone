@@ -5,7 +5,7 @@ import ImageSlider from "../ImageSlider/ImageSlider";
 const sliderSettings = {
   dots: false,
   infinite: false,
-  speed: 300,
+  speed: 350,
   slidesToShow: 5,
   slidesToScroll: 5,
   initialSlide: 0,
@@ -26,7 +26,7 @@ const sliderSettings = {
       },
     },
     {
-      breakpoint: 768,
+      breakpoint: 700,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,

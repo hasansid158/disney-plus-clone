@@ -1,20 +1,26 @@
 .movieSliders {
   margin-bottom: 30px;
 
-  button ~ div div div {
-    transition: all 500ms ease;
+  :global {
+    .slick-slider {
+      margin-top: 12px;
+    }
 
-    &:hover {
-      transform: scale(1.02);
+    .slick-slide {
+      transition: all 500ms ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      div div {
+        border-left: none transparent;
+        border-right: 20px solid transparent;
+      }
     }
   }
 
   h4 {
     font-size: 20px;
-  }
-
-  & > div {
-    margin-top: 12px;
-    margin-left: -10px;
   }
 }

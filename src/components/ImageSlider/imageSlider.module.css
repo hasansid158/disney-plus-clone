@@ -53,6 +53,17 @@
 :global .slick-dots li button {
   cursor: default !important;
 }
+:global .slick-next,
+:global .slick-prev {
+  height: 100% !important;
+  width: 5% !important;
+}
+:global .slick-next {
+  right: -3.8vw !important;
+}
+:global .slick-prev {
+  left: -3.8vw !important;
+}
 :global .slick-prev.slick-disabled:before,
 :global .slick-next.slick-disabled:before {
   opacity: 0 !important;

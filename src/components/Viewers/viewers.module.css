@@ -1,8 +1,8 @@
 .container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  -moz-column-gap: 25px;
-       column-gap: 25px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   padding: 30px 0px 26px;
 }
 .container div {
@@ -19,7 +19,6 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 8px;
   background-image: linear-gradient(#30323e, #1e1f2a);
   background-position: center;
   background-repeat: no-repeat;
@@ -54,4 +53,14 @@
 }
 .container div:hover video {
   display: block;
+}
+@media screen and (max-width: 700px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+  }
+  .container div {
+    border: 1px solid rgba(249, 249, 249, 0.2);
+    border-radius: 6px;
+  }
 }/*# sourceMappingURL=viewers.module.css.map */

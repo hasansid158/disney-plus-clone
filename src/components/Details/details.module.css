@@ -51,7 +51,7 @@
   background-color: #f9f9f9;
   color: #090b13;
   border: none;
-  margin: 0.25rem 0.5rem;
+  margin: 0.25rem 1rem 0.25rem 0;
   border-radius: 0.25rem;
   font-size: 15px;
   font-weight: bold;
@@ -76,7 +76,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4px 8px;
+  margin-right: 16px;
   border: 2px solid #f9f9f9;
   color: #f9f9f9;
   background-color: rgba(0, 0, 0, 0.6);
@@ -102,4 +102,11 @@
 .detailsContainer .controls .addButton:hover svg,
 .detailsContainer .controls .groupWatchButton:hover svg {
   fill: #090b13;
+}
+.detailsContainer .description {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #f9f9f9;
+  padding: 1rem 0;
+  max-width: 874px;
 }/*# sourceMappingURL=details.module.css.map */

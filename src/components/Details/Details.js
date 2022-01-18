@@ -1,21 +1,33 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import style from "./details.module.css";
+import { useCollection } from "../../hooks/useCollection";
 
 function Details() {
+  const { documents, error } = useCollection("movies");
+
+  const { id } = useParams();
+
+  const urls =
+    documents &&
+    documents.filter((movie) => {
+      if (movie.id === id) {
+        return {
+          backgroundImage: movie.backgroundImage,
+          titleImage: movie.titleImage,
+          description: movie.description,
+        };
+      }
+    });
+
   return (
     <main className={style.detailsContainer}>
       <div className={style.backgroundImg}>
-        <img
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/6548230CF307C2FC1201963367161187EC593E88FBA138BB03011550DBA35E11/scale?width=1440&aspectRatio=1.78&format=jpeg"
-          alt="mainImg"
-        />
+        <img src={urls && urls[0].backgroundImage} alt="mainImg" />
       </div>
 
       <div className={style.titleImage}>
-        <img
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/BC59E8EE95346169414CF19EF45F8407FD943882B59E97CCA9853212028AAC58/scale?width=1440&aspectRatio=1.78&format=png"
-          alt="titleImage"
-        />
+        <img src={urls && urls[0].titleImage} alt="titleImage" />
       </div>
       <div className={style.controls}>
         <button className={style.playButton}>
@@ -42,6 +54,9 @@ function Details() {
             ></path>
           </svg>
         </button>
+      </div>
+      <div className={style.description}>
+        <span>{urls && urls[0].description}</span>
       </div>
     </main>
   );

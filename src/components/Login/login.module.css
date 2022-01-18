@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.container .backgroundImg {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .ctaBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  max-width: 650px;
+  width: 90%;
+  margin-top: 25vh;
+}
+.container .ctaBox .ctaLogo {
+  width: 100%;
+  height: auto;
+}
+.container .ctaBox .signUpButton {
+  color: #f9f9f9;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100%;
+  background-color: #0063e5;
+  border: none;
+  padding: 17px 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 8px 0px;
+  transition: background-color 250ms ease;
+  letter-spacing: 1.5px;
+}
+.container .ctaBox .signUpButton:hover {
+  background-color: #0483ee;
+}
+.container .ctaBox .ctaDescription {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+}/*# sourceMappingURL=login.module.css.map */

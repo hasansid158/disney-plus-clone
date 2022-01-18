@@ -59,12 +59,15 @@
     }
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 20px;
     div {
       border: 1px solid rgba(249, 249, 249, 0.2);
       border-radius: 6px;
+    }
+    video {
+      border-radius: 6px !important;
     }
   }
 }

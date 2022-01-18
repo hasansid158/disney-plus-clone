@@ -54,7 +54,7 @@
 .container div:hover video {
   display: block;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .container {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 20px;
@@ -62,5 +62,8 @@
   .container div {
     border: 1px solid rgba(249, 249, 249, 0.2);
     border-radius: 6px;
+  }
+  .container video {
+    border-radius: 6px !important;
   }
 }/*# sourceMappingURL=viewers.module.css.map */

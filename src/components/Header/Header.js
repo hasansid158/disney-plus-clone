@@ -35,7 +35,7 @@ function Header() {
         </button>
       </nav>
 
-      <img className={style.userImg} src="images/myImageSquare.jpg" />
+      <img className={style.userImg} src="/images/myImageSquare.jpg" />
     </header>
   );
 }

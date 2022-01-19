@@ -3,6 +3,70 @@
   padding: 0 calc(3.5vw + 5px);
   position: relative;
 }
+.detailsContainer .spinLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: #1a1d29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+.detailsContainer .spinLoader img {
+  width: 100px;
+  height: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.detailsContainer .spinLoader.spinDisabled {
+  -webkit-animation: fadeOut 500ms forwards ease;
+          animation: fadeOut 500ms forwards ease;
+}
+.detailsContainer .spinLoader.spinDisabled img {
+  -webkit-animation: moveSpin 500ms forwards ease;
+          animation: moveSpin 500ms forwards ease;
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@-webkit-keyframes moveSpin {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
+@keyframes moveSpin {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
 .detailsContainer .backgroundImg {
   position: fixed;
   top: 70px;

@@ -6,7 +6,9 @@ export const useCollection = (collection) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let ref = projectFirestore.collection(collection);
+    let ref = projectFirestore
+      .collection(collection)
+      .orderBy("listImage", "desc");
 
     const unsub = ref.onSnapshot(
       (snapshot) => {

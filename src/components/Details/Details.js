@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./details.module.css";
 import { useCollection } from "../../hooks/useCollection";
+import SpinnerLoader from "../SpinnerLoader/SpinnerLoader";
 
 function Details() {
   const { documents, error } = useCollection("movies");
-  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [imageLoadCount, setImageLoadCount] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const { id } = useParams();
 
@@ -21,24 +23,28 @@ function Details() {
       }
     });
 
+  const onLoadComplete = () => {
+    setImageLoadCount(imageLoadCount + 1);
+    if (imageLoadCount >= 2) {
+      setImagesLoaded(true);
+    }
+  };
+
   return (
     <main className={style.detailsContainer}>
+      <SpinnerLoader loaded={imagesLoaded} />
       <div className={style.backgroundImg}>
         <img
           src={urls && urls[0].mainImage}
           alt="mainImg"
-          onLoad={() => {
-            setImagesLoaded(imagesLoaded + 1);
-          }}
+          onLoad={onLoadComplete}
         />
       </div>
       <div className={style.titleImage}>
         <img
           src={urls && urls[0].logoImage}
           alt="titleImage"
-          onLoad={() => {
-            setImagesLoaded(imagesLoaded + 1);
-          }}
+          onLoad={onLoadComplete}
         />
       </div>
       <div className={style.controls}>
@@ -46,9 +52,7 @@ function Details() {
           <img
             src="/images/play-icon-black.png"
             alt="play"
-            onLoad={() => {
-              setImagesLoaded(imagesLoaded + 1);
-            }}
+            onLoad={onLoadComplete}
           />
           <span>PLAY</span>
         </button>
@@ -75,13 +79,6 @@ function Details() {
       </div>
       <div className={style.description}>
         <span>{urls && urls[0].description}</span>
-      </div>
-      <div
-        className={`
-          ${style.spinLoader}
-          ${imagesLoaded >= 3 ? style.spinDisabled : ""}`}
-      >
-        <img src="/images/spinner.svg" alt="loader" />
       </div>
     </main>
   );

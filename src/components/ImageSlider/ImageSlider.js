@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./imageSlider.module.css";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -16,23 +15,35 @@ const defaultSettings = {
 };
 
 function ImageSlider(props) {
-  const imageUrls = props.images;
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+
+  const checkImagesLoad = () => {
+    if (imagesLoaded >= props.images.length) {
+      props.getImageLoaded && props.getImageLoaded(true);
+    } else {
+      setImagesLoaded(imagesLoaded + 1);
+    }
+  };
 
   const settings =
     props.settings != undefined ? props.settings : defaultSettings;
 
   return (
-    <Slider {...settings} className={style.imageSlider}>
-      {imageUrls.map((url, idx) => {
-        return (
-          <Link to={`/detail/${url.id}`} key={idx}>
-            <div className={style.sliderCont}>
-              <img src={url.movieList} alt={idx} />
-            </div>
-          </Link>
-        );
-      })}
-    </Slider>
+    <React.Fragment>
+      <Slider {...settings} className={style.imageSlider}>
+        {props.images.map((url, idx) => {
+          return (
+            <Link
+              to={`/detail/${url.id}`}
+              key={idx}
+              className={style.sliderCont}
+            >
+              <img src={url.movieList} alt={idx} onLoad={checkImagesLoad} />
+            </Link>
+          );
+        })}
+      </Slider>
+    </React.Fragment>
   );
 }
 

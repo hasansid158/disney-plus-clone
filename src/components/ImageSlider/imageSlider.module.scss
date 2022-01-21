@@ -1,6 +1,7 @@
 .imageSlider {
   margin-top: 20px;
   overflow: visible;
+  position: relative;
 
   button {
     z-index: 1;
@@ -43,6 +44,55 @@
       font-size: 10px;
       color: rgb(150, 158, 171);
       opacity: 1;
+    }
+  }
+}
+
+.spinLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: rgb(26, 29, 41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  img {
+    transform: scale(0.2) translateY(-150px);
+    height: auto;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  &.spinDisabled {
+    animation: fadeOut 500ms forwards ease;
+    img {
+      animation: moveSpin 500ms forwards ease;
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    @keyframes moveSpin {
+      from {
+        transform: scale(0.2) translateY(-150px);
+      }
+      to {
+        transform: scale(0.2) translateY(100px);
+      }
     }
   }
 }

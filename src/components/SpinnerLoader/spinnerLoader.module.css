@@ -1,0 +1,69 @@
+.spinLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -50px;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1d29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.spinLoader img {
+  transform: scale(0.2);
+  height: auto;
+  position: fixed;
+  top: calc(30vh - 10px);
+  bottom: 0;
+  margin: 0 auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.spinLoader.spinDisabled {
+  -webkit-animation: fadeOut 500ms forwards ease;
+          animation: fadeOut 500ms forwards ease;
+}
+.spinLoader.spinDisabled img {
+  -webkit-animation: moveSpin 500ms forwards ease;
+          animation: moveSpin 500ms forwards ease;
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@-webkit-keyframes moveSpin {
+  from {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(0.35);
+  }
+}
+@keyframes moveSpin {
+  from {
+    transform: scale(0.2);
+  }
+  to {
+    transform: scale(0.35);
+  }
+}/*# sourceMappingURL=spinnerLoader.module.css.map */

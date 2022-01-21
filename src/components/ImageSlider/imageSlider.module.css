@@ -1,6 +1,7 @@
 .imageSlider {
   margin-top: 20px;
   overflow: visible;
+  position: relative;
 }
 .imageSlider button {
   z-index: 1;
@@ -35,6 +36,71 @@
   font-size: 10px;
   color: #969eab;
   opacity: 1;
+}
+
+.spinLoader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: #1a1d29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.spinLoader img {
+  transform: scale(0.2) translateY(-150px);
+  height: auto;
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.spinLoader.spinDisabled {
+  -webkit-animation: fadeOut 500ms forwards ease;
+          animation: fadeOut 500ms forwards ease;
+}
+.spinLoader.spinDisabled img {
+  -webkit-animation: moveSpin 500ms forwards ease;
+          animation: moveSpin 500ms forwards ease;
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@-webkit-keyframes moveSpin {
+  from {
+    transform: scale(0.2) translateY(-150px);
+  }
+  to {
+    transform: scale(0.2) translateY(100px);
+  }
+}
+@keyframes moveSpin {
+  from {
+    transform: scale(0.2) translateY(-150px);
+  }
+  to {
+    transform: scale(0.2) translateY(100px);
+  }
 }
 
 :global .slick-list {

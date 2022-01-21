@@ -5,11 +5,12 @@
   align-items: center;
   padding: 0px 36px;
   overflow-x: hidden;
+  z-index: 999;
 
   .navMenu {
     display: flex;
     flex-grow: 1;
-    margin-left: 20px;
+    margin-left: 25px;
 
     button,
     a {
@@ -18,8 +19,9 @@
       color: white;
       display: flex;
       align-items: center;
-      padding: 0px 12px;
+      padding: 0px 18px;
       cursor: pointer;
+      text-decoration: none;
 
       img {
         height: 18px;
@@ -28,7 +30,7 @@
       span {
         font-size: 13px;
         letter-spacing: 1.42px;
-        margin-left: 2px;
+        margin-left: 10px;
         position: relative;
 
         &::after {
@@ -65,5 +67,34 @@
     height: 48px;
     border-radius: 50%;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 1023px) {
+    padding: 0 26px;
+    .logoImg {
+      width: 63px;
+      height: 38px;
+    }
+    .userImg {
+      width: 36px;
+      height: 36px;
+    }
+    .navMenu {
+      button,
+      a {
+        padding: 0 14px;
+        span {
+          display: none;
+        }
+
+        img {
+          height: 24px;
+          width: 24px;
+        }
+        &:nth-child(1n + 4) {
+          display: none;
+        }
+      }
+    }
   }
 }

@@ -41,6 +41,7 @@
 .detailsContainer .controls {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .detailsContainer .controls .playButton {
   display: flex;
@@ -102,6 +103,17 @@
 .detailsContainer .controls .addButton:hover svg,
 .detailsContainer .controls .groupWatchButton:hover svg {
   fill: #090b13;
+}
+.detailsContainer .controls .featureButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1023px) {
+  .detailsContainer .controls button,
+.detailsContainer .controls div {
+    transform: scale(0.9);
+  }
 }
 .detailsContainer .description {
   font-size: 20px;

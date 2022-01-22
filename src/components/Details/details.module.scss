@@ -47,6 +47,7 @@
   .controls {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     .playButton {
       display: flex;
       justify-content: center;
@@ -110,6 +111,19 @@
         svg {
           fill: #090b13;
         }
+      }
+    }
+
+    .featureButtons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 1023px) {
+      button,
+      div {
+        transform: scale(0.9);
       }
     }
   }

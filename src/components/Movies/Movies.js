@@ -38,6 +38,7 @@ const sliderSettings = {
 
 function Movies() {
   let titleImageUrls = null;
+  let reversedTitleImageUrls = null;
   const { documents, error } = useCollection("movies");
 
   if (error !== null) {
@@ -59,7 +60,10 @@ function Movies() {
       <div className={style.movieSliders}>
         <h4>New to Disney+</h4>
         {documents && (
-          <ImageSlider images={titleImageUrls} settings={sliderSettings} />
+          <ImageSlider
+            images={[...titleImageUrls].reverse()}
+            settings={sliderSettings}
+          />
         )}
       </div>
     </section>

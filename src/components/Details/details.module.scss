@@ -2,10 +2,11 @@
   min-height: calc(100vh - 70px);
   padding: 0 calc(3.5vw + 5px);
   position: relative;
+  overflow: hidden;
 
   .backgroundImg {
-    position: fixed;
-    top: 70px;
+    position: absolute;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: -2;
@@ -91,9 +92,9 @@
       color: #f9f9f9;
       background-color: rgba(0, 0, 0, 0.6);
       border-radius: 100%;
+      min-height: 44px;
       height: 44px;
       width: 44px;
-      font-size: 28px;
       font-weight: normal;
       cursor: pointer;
       transition: all 300ms ease;
@@ -101,7 +102,6 @@
       svg {
         transition: all 300ms ease 0s;
         fill: white;
-        transform: scale(1.4);
       }
 
       &:hover {
@@ -114,10 +114,22 @@
       }
     }
 
+    .addButton svg {
+      height: 100%;
+      width: 100%;
+    }
+    .groupWatchButton svg {
+      transform: scale(1.4);
+      height: 100%;
+      width: 100%;
+    }
+
     .featureButtons {
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100%;
+      width: auto;
     }
 
     @media screen and (max-width: 1023px) {
